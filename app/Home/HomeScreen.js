@@ -74,10 +74,10 @@ const HomeScreen = ({navigation}) => {
   const dispatch = useDispatch();
 
 
-  /* useEffect(() => {
-    getLoggedInPersonData();
+  useEffect(() => {
+    //getLoggedInPersonData();
     getDashBoardData();
-  }, []); */
+  }, []);
 
 
   useEffect(() => {
@@ -95,6 +95,7 @@ useEffect(()=>{
     
   //console.log('Quotes got from Store in HomeScreen.js file is:',JSON.stringify(quotesData));
   console.log('dashboard Count Data Got From Store in HomeScreen.js file is:',JSON.stringify(dashboardCountDataGotFromStore));
+  console.log('dashboard Count Data Got From Store in HomeScreen.js file is:',JSON.stringify(dashboardCountDataGotFromStore.data.New_orderCount));
 },)
 
 
@@ -342,7 +343,28 @@ const getData = () => {
     }
   };
 
+
   const getDashBoardData = () => {
+    
+
+          setnew_orderKey(dashboardCountDataGotFromStore.data.New_orderCount);
+          setprocess_orderKey(dashboardCountDataGotFromStore.data.Process_orderCount);
+          setduein_thisweekKey(dashboardCountDataGotFromStore.data.Duein_thisweekCount);
+          setover_dueKey(dashboardCountDataGotFromStore.data.Over_dueCount);
+          settotal_orderKey(dashboardCountDataGotFromStore.data.Total_orderCount);
+          setduein_todayKey(dashboardCountDataGotFromStore.data.Duein_todayCount);
+          setcustomer_pendingKey(dashboardCountDataGotFromStore.data.Customer_pendingCount);
+
+          setcustomerKey(dashboardCountDataGotFromStore.data.CustomerCount);
+          setsupplierKey(dashboardCountDataGotFromStore.data.SupplierCount);
+          //setdue_dayKey(user.Due_dayCount);
+
+          setinstance_idKey(dashboardCountDataGotFromStore.data.Instance_idText);
+
+          
+  };
+
+  /* const getDashBoardData = () => {
     try {
       AsyncStorage.getItem('dashBoardDataKey').then((value) => {
         if (value != null) {
@@ -376,7 +398,7 @@ const getData = () => {
       console.log('Error while Fetching Dashboard Count is:',error);
       alert('Error while Fetching Dashboard Count is:'+error);
     }
-  };
+  }; */
 
   const removeData = async () => {
     try {
