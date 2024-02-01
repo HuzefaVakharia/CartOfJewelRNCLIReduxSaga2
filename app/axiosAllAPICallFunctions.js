@@ -60,7 +60,7 @@ export async function post(handler, payload) {
 
 
 
-  export async function authorizedGet(handler, payload = false) {
+  export async function getdashBoardCount(handler, payload = false) {
     const token = await AsyncStorage.getItem('token');
     let options = {
       method: 'POST',
@@ -73,11 +73,11 @@ export async function post(handler, payload) {
     };
     if (payload) {
       options.data = payload;
-      //alert('payload from authorizedGet() function is True:' + payload);
+      //alert('payload from getdashBoardCount() function is True:' + payload);
     }
     else{
-      //alert('payload from authorizedGet() function is False and handler is:' + handler+'And Payload is:'+payload);
-      /* alert('payload from authorizedGet() function is False and payload is:' + payload+'options.data is:'+options.data+' ,And full options is:'+JSON.stringify(options)); */
+      //alert('payload from getdashBoardCount() function is False and handler is:' + handler+'And Payload is:'+payload);
+      /* alert('payload from getdashBoardCount() function is False and payload is:' + payload+'options.data is:'+options.data+' ,And full options is:'+JSON.stringify(options)); */
     }
     return axios(options);
   }

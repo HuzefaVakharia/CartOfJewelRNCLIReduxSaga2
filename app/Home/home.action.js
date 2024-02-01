@@ -15,9 +15,9 @@ import { HomeScreen } from "../actionNames";
 
 
 
-export const setUser = (payload) => {
+export const setDashBoardCountDataInStore = (payload) => {
   return {
-    type: HomeScreen.SET_USER,
+    type: HomeScreen.SET_DASHBOARDCOUNTVALUE,
     payload: payload,
   };
 };

@@ -354,7 +354,7 @@ const getData = () => {
           settotal_orderKey(dashboardCountDataGotFromStore.data.Total_orderCount);
           setduein_todayKey(dashboardCountDataGotFromStore.data.Duein_todayCount);
           setcustomer_pendingKey(dashboardCountDataGotFromStore.data.Customer_pendingCount);
-
+          
           setcustomerKey(dashboardCountDataGotFromStore.data.CustomerCount);
           setsupplierKey(dashboardCountDataGotFromStore.data.SupplierCount);
           //setdue_dayKey(user.Due_dayCount);

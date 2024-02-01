@@ -17,10 +17,10 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { put, call } from 'redux-saga/effects';
 import { AuthActions } from '../actionNames';
 //import {authorizedGet, post} from '../../soceton';
-import {authorizedGet, post} from '../axiosAllAPICallFunctions';
+import {getdashBoardCount, post} from '../axiosAllAPICallFunctions';
 import { ToastAndroid } from 'react-native';
 //import {setUser} from '../account.action';
-import { setUser } from '../Home/home.action';
+import { setDashBoardCountDataInStore } from '../Home/home.action';
 
 
 
@@ -93,15 +93,15 @@ export function* login(action) {
 
     AsyncStorage.setItem('token', auth.data.data.access_token);
 
-/*This authorizedGet() function is fetching our Dashboard count from our Rajeshwarinfotech server which is tobe shown in HomeScreen*/
+/*This getdashBoardCount() function is fetching our Dashboard count from our Rajeshwarinfotech server which is tobe shown in HomeScreen*/
 
 
-    const {user, u_error} = yield call(async function () {
+    const {dashBoardCountAPIResult, u_error} = yield call(async function () {
       try {
-        const user = await authorizedGet('dashboard_count');
+        const dashBoardCountAPIResult = await getdashBoardCount('dashboard_count');
           //const user = await authorizedGet('account/detail');
-          console.log('user got inside login.saga.js file after authorizedGet() function call is:',user);
-          return ({ user });
+          console.log('dashBoardCountAPIResult got inside login.saga.js file after getdashBoardCount() function call is:',dashBoardCountAPIResult);
+          return ({ dashBoardCountAPIResult });
         } catch (u_error) {
           return ({ u_error });
         }
@@ -112,28 +112,28 @@ export function* login(action) {
       /* Here we can put navigation code to go to our HomeScreen.js  */
 
 
-      if (user) {
+      if (dashBoardCountAPIResult) {
         const response = {
           status: 'success',
-          New_orderCount: user.data.data.new_order,
-          Process_orderCount: user.data.data.process_order,
-          Duein_thisweekCount: user.data.data.duein_thisweek,
-          Over_dueCount: user.data.data.over_due,
-          Total_orderCount: user.data.data.total_order,
-          Duein_todayCount: user.data.data.duein_today,
-          Customer_pendingCount: user.data.data.customer_pending,
+          New_orderCount: dashBoardCountAPIResult.data.data.new_order,
+          Process_orderCount: dashBoardCountAPIResult.data.data.process_order,
+          Duein_thisweekCount: dashBoardCountAPIResult.data.data.duein_thisweek,
+          Over_dueCount: dashBoardCountAPIResult.data.data.over_due,
+          Total_orderCount: dashBoardCountAPIResult.data.data.total_order,
+          Duein_todayCount: dashBoardCountAPIResult.data.data.duein_today,
+          Customer_pendingCount: dashBoardCountAPIResult.data.data.customer_pending,
 
-          CustomerCount: user.data.data.customer,
-          SupplierCount: user.data.data.supplier,
-          Due_dayCount: user.data.data.due_day,
+          CustomerCount: dashBoardCountAPIResult.data.data.customer,
+          SupplierCount: dashBoardCountAPIResult.data.data.supplier,
+          Due_dayCount: dashBoardCountAPIResult.data.data.due_day,
 
-          Instance_idText: user.data.data.instance_id,
+          Instance_idText: dashBoardCountAPIResult.data.data.instance_id,
           //data: user.data.data,
           //social_auth: user.data.social_auth,
           //token: auth.data.token,
         };
         //AsyncStorage.setItem('user', JSON.stringify(response.data));
-        console.log('New order count is got inside login.saga.js is:',user.data.data.new_order);
+        console.log('New order count is got inside login.saga.js is:',dashBoardCountAPIResult.data.data.new_order);
         AsyncStorage.setItem(
           'dashBoardDataKey',
           JSON.stringify(response)
@@ -142,13 +142,13 @@ export function* login(action) {
 
 
       /* Here we are storing our response two times in our Redux store with two different arrays which are present in two different reducers namely
-      1. home.reducer (using setUser)
+      1. home.reducer (using setDashBoardCountDataInStore)
       2. login.reducer (using AuthActions.LOGIN_SUCCESS)
       
       */
   
         yield put(
-          setUser({
+          setDashBoardCountDataInStore({
             data: response,
             //social_auth: response.social_auth,
             isLoading: false,
@@ -167,11 +167,11 @@ export function* login(action) {
           
         });
   
-        console.log('Login success message from if(user) condition ');
-      } else {//This else is for if(user)
-        console.log('Error response message from if(user) condition');
+        console.log('Login success message from if(dashBoardCountAPIResult) condition ');
+      } else {//This else is for if(dashBoardCountAPIResult)
+        console.log('Error response message from if(dashBoardCountAPIResult) condition');
   
-        ToastAndroid.show('Login failed message from if(user) condition.', ToastAndroid.SHORT);
+        ToastAndroid.show('Login failed message from if(dashBoardCountAPIResult) condition.', ToastAndroid.SHORT);
         //AsyncStorage.removeItem('token');
         yield put({type: AuthActions.LOGIN_FAILED});
       }

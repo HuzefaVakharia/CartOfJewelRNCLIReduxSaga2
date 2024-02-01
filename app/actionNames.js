@@ -23,15 +23,12 @@ export class AuthActions {
   static FORGOT_PASSWORD_FAILED = 'FORGOT_PASSWORD_FAILED';
   static SET_FORGOT_PASSWORD = 'SET_FORGOT_PASSWORD';
 
-  static SET_USER = 'SET_USER';
+  
 }
 
 export class HomeScreen {
-  static SET_USER = 'SET_USER';
-  //static FETCH_QUOTES = 'fetch_quotes';
-  //static SET_QUOTES_DATA = 'set_quotes_data';
-  //static QUOTE_API = 'https://rajeshwersoftsolution.com/jwelcart/api/dashboard_count';
-  //static QUOTE_API = 'https://dummyjson.com/quotes';
+  static SET_DASHBOARDCOUNTVALUE = 'SET_DASHBOARDCOUNTVALUE';
+  
   
 }
 

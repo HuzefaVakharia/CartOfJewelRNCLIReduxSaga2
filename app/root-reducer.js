@@ -7,11 +7,11 @@
 import {combineReducers} from 'redux';
 //import {LoginReducer} from './account/login/login.reducer';
 import { LoginReducer } from './login/login.reducer';
-import { quoteReducer,ActiveUserReducer } from './Home/home.reducer';
+import { quoteReducer,HomeScreen_DashBoardCount_Reducer } from './Home/home.reducer';
 const rootReducers = combineReducers({
   
   login: LoginReducer,
-  dashboardCountingKey:ActiveUserReducer,
+  dashboardCountingKey:HomeScreen_DashBoardCount_Reducer,
   //quotes:quoteReducer,
   
 });
