@@ -40,7 +40,7 @@ import
 
 import { TextInput } from 'react-native-paper';
 
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { Button, Card } from '@rneui/themed';
 
@@ -85,7 +85,10 @@ const LoginScreen = ({ navigation }) =>
     console.log('Login per details got from Store in Login.js file is:',JSON.stringify(login_person_detail));
   },)
 
-
+   useEffect(()=>{
+    console.log('UseEffect for retrieveData is running...');
+    _retrieveData();
+  },[]);
 
 
 
@@ -196,6 +199,53 @@ const LoginScreen = ({ navigation }) =>
   let nameFour = '';
   let accessTokenFour = '';
   let contact_no_toShowInDrawerNavigationFour = '';
+
+
+
+  const [isLogged,setisLogged]=useState(false);
+
+ const _retrieveData=()=>{
+    try{
+
+      AsyncStorage.getItem('token')
+        .then(value =>
+        {
+          if (value != null)
+          {
+
+            setLoginModalVisible(false);
+            setLoaderModalVisible(true);
+
+            let payload = {
+              mobile_no: '6355198039',
+              password: '123456',
+              navigation: navigation,
+            };
+            dispatch(login(payload));
+
+
+
+
+
+
+
+
+          }
+        })
+    } catch (error)
+    {
+      console.log('Not possible to navigate error is:',error);
+    }
+
+
+
+      
+      }
+
+
+      /* useEffect(()=>{
+        _retrieveData();
+      },[]); */
 
 
 
@@ -556,6 +606,7 @@ const LoginScreen = ({ navigation }) =>
                             marginTop: responsiveHeight(-4),
                             marginLeft: responsiveWidth(85),
                           } }
+                          
                         />
                         {/*<Badge
                           status="error"

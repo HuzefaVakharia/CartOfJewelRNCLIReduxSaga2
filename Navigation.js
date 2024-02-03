@@ -8,6 +8,7 @@ import React, {useEffect, useState} from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import {
     responsiveFontSize,
     responsiveHeight,
@@ -19,88 +20,45 @@ import HomeScreen from './app/Home/HomeScreen';
 const Stack = createNativeStackNavigator();
 
 
-
-
-
-
-/* function HomeScreen({navigation}) {
-    return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Home Screen</Text>
-  
-  
-  
-  
-  
-        <TouchableOpacity onPress={()=>navigation.navigate('SecondScreen')} activeOpacity={0.6} style={styles.button} >
-  
-  <Text style={styles.TextStyle}>Go to Second Screen</Text>
-  
-  </TouchableOpacity>
-  
-  
-  
-  
-      </View>
-    );
-  } */
-  
-  
-  
-  function SecondScreen({navigation}) {
-    return (
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>Home Screen</Text>
-  
-  
-  
-        <TouchableOpacity onPress={()=>navigation.navigate('HomeScreen')} activeOpacity={0.6} style={styles.button} >
-  
-  <Text style={styles.TextStyle}>Go to Home Screen</Text>
-  
-  </TouchableOpacity>
-  
-  
-  
-  
-      </View>
-    );
-  }
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 const Navigation = () => {
-                                                                                                                                                                                                                                                                           return (
-        <NavigationContainer>
+
+
+  
+  
+  return (
+                                                                                                                                                                                                                                                                            <NavigationContainer>
       <Stack.Navigator>
-      
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      
        
-      <Stack.Screen name="SecondScreen" component={SecondScreen} />
+      
       </Stack.Navigator>
     </NavigationContainer>
       );
     };
+
+
+    /* export const OurMainApplication = () => {
+      return (
+
+<Stack.Navigator>
+
+
+<Stack.Screen name="HomeScreen" component={HomeScreen} />
+
+
+</Stack.Navigator>
+
+);
+}; */
     
     
     
     //make this component available to the app
     export default Navigation;
-
+    
+    
 
     // define your styles
 const styles = StyleSheet.create({

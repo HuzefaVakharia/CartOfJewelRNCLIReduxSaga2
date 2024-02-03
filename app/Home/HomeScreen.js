@@ -404,7 +404,8 @@ const getData = () => {
     try {
       await AsyncStorage.clear();
       /* This above clear() method will clear all the AsyncStorage data but if we want to delete particular key's data then we will do like this as shown below */
-      //Alert.alert('Logout button clicked')
+      //Alert.alert('removeData running...');
+      console.log('removeData running...');
       //await AsyncStorage.removeItem('LoggedInPersonNameKey');
       navigation.navigate('LoginScreen');
     } catch (error) {
@@ -483,7 +484,9 @@ const getData = () => {
   });
 
   const bellIconPressedInHomeScreenDoThis = () => {
-    alert('Bell icon button pressed From Home Screen...');
+    //alert('Bell icon button pressed From Home Screen...');
+    removeData();
+    //AsyncStorage.removeItem('token');
     //navigation.navigate('UploadImage');
   };
 

@@ -29,7 +29,7 @@ import { setDashBoardCountDataInStore } from '../Home/home.action';
 
 
 export function* login(action) {
-  alert('Action got inside login.saga.js file is:' + JSON.stringify(action));
+  //alert('Action got inside login.saga.js file is:' + JSON.stringify(action));
   console.log('Action got inside login.saga.js file is:' + JSON.stringify(action));
 
 
@@ -91,7 +91,8 @@ export function* login(action) {
 
 
 
-    AsyncStorage.setItem('token', auth.data.data.access_token);
+    AsyncStorage.setItem('token',auth.data.data.access_token);
+
 
 /*This getdashBoardCount() function is fetching our Dashboard count from our Rajeshwarinfotech server which is tobe shown in HomeScreen*/
 
@@ -159,13 +160,16 @@ export function* login(action) {
           type: AuthActions.LOGIN_SUCCESS,
           payload: response,
         });
+
+        //action.payload.navigation.navigate('HomeScreen');
   
-         action.payload.navigation.reset({
+           action.payload.navigation.reset({
           index: 1,
           //routes: [{name: 'Home'}],
           routes: [{name: 'HomeScreen'}],
+          //routes: [{name: 'LoginScreen'}],
           
-        });
+        });  
   
         console.log('Login success message from if(dashBoardCountAPIResult) condition ');
       } else {//This else is for if(dashBoardCountAPIResult)
