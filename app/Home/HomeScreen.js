@@ -33,6 +33,7 @@ import {
 } from 'react-native-responsive-dimensions';
 //import FetchDynamicAPIs from '../components/FetchDynamicAPIs';
 //import ActualSideNavigationMenu from './ActualSideNavigationMenu';
+import ActualSideNavigationMenu from '../components/ActualSideNavigationMenu';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   Gesture,
@@ -857,7 +858,7 @@ const getData = () => {
                   
                   
                   
-                  {/*<ActualSideNavigationMenu
+                 <ActualSideNavigationMenu
               ref={ ChildRef }
               removeGraycolorPropsLabel={ removingNowGrayColor }
               gotoCategoryScreenPropsLabel={ goToCategoryScreen }   
@@ -870,7 +871,7 @@ const getData = () => {
               removeAllAsyncStorageInformation={ removeData }
             />
 
-                  { callFetchDynamicAPIs == true ? (
+                   {/*{ callFetchDynamicAPIs == true ? (
                     <FetchDynamicAPIs
                       urlToFetchProps={ "dashboard_count" }
                       mobileNumberForAuthentication={ "" }
