@@ -61,12 +61,14 @@ export async function post(handler, payload) {
 
 
   export async function getdashBoardCount(handler, payload = false) {
-    const token = await AsyncStorage.getItem('token');
+    const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
+    console.log('Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
+    let user = JSON.parse(values);
     let options = {
       method: 'POST',
       //method: 'GET',
 
-      headers: {Authorization: 'Bearer ' + token},
+      headers: {Authorization: 'Bearer ' + user.token},
       //headers: {Authorization: 'Token ' + token},
       url: handler,
       baseURL: BASE_URL,

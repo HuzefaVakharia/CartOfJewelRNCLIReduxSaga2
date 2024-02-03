@@ -88,10 +88,17 @@ export function* login(action) {
     
     */
 
+    let login_details_for_nextTime={
+      mobile_no: action.payload.mobile_no,
+    password: action.payload.password,
+      token:auth.data.data.access_token
+    }
 
-
-
-    AsyncStorage.setItem('token',auth.data.data.access_token);
+    AsyncStorage.setItem('login_details_for_nextTimeKey',JSON.stringify(login_details_for_nextTime));
+    /* 
+    This is correct without using login_details_for_nextTime 
+    
+    AsyncStorage.setItem('token',auth.data.data.access_token); */
 
 
 /*This getdashBoardCount() function is fetching our Dashboard count from our Rajeshwarinfotech server which is tobe shown in HomeScreen*/

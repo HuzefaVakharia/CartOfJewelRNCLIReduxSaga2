@@ -207,18 +207,20 @@ const LoginScreen = ({ navigation }) =>
  const _retrieveData=()=>{
     try{
 
-      AsyncStorage.getItem('token')
+      AsyncStorage.getItem('login_details_for_nextTimeKey')
         .then(value =>
         {
           if (value != null)
           {
-
+            let user = JSON.parse(value);
             setLoginModalVisible(false);
             setLoaderModalVisible(true);
 
             let payload = {
-              mobile_no: '6355198039',
-              password: '123456',
+              mobile_no: user.mobile_no,
+              password: user.password,
+              //mobile_no: '6355198039',
+              //password: '123456',
               navigation: navigation,
             };
             dispatch(login(payload));
