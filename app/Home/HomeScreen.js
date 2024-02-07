@@ -166,9 +166,10 @@ const getData = () => {
   };
 
   const orderIconClickedDoThis = () => {
-    navigation.navigate('Order', {
+    navigation.navigate('OrderScreen');
+    /* navigation.navigate('OrderScreen', {
       accessTokenSentToOrderScreen: accessTokenKey,
-    });
+    }); */
   };
 
   const addOrderIconClickedDoThis = () => {
@@ -585,7 +586,7 @@ const getData = () => {
                         setthreeLineButtonClicked(
                           ChildRef.current.bringGrayColor
                         )
-                      }>
+                        }>
                       <AllUITogether show={'SideDrawerThreeLineImage'} />
                     </TouchableOpacity>
 

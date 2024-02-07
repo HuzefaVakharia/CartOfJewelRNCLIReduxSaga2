@@ -32,6 +32,12 @@ export class HomeScreen {
   
 }
 
+export class ActionNamesAssociatedWithOrderScreen{
+  static SET_ORDERSCREENDATA = 'SET_ORDERSCREENDATA';
+  static ORDERSCREENDATAFETCH_SUCCESS = 'ORDERSCREENDATAFETCH_SUCCESS';
+  static SET_QUOTES_DATA = 'set_quotes_data';
+}
+
 export class ReportsActions {
   static ADD_REPORT = 'ADD_REPORT';
   static SELECT_REPORT = 'SELECT_REPORT';

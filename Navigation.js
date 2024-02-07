@@ -17,6 +17,11 @@ import {
 
 import LoginScreen from './app/login/Login';
 import HomeScreen from './app/Home/HomeScreen';
+import OrderScreen from './app/Order/OrderScreen';
+
+
+
+
 const Stack = createNativeStackNavigator();
 
 
@@ -32,6 +37,7 @@ const Navigation = () => {
   }}>
       <Stack.Screen name="LoginScreen" component={LoginScreen} />
       <Stack.Screen name="HomeScreen" component={HomeScreen} />
+      <Stack.Screen name="OrderScreen" component={OrderScreen} />
       
        
       

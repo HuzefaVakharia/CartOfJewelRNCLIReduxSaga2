@@ -9,7 +9,7 @@
 import {configureStore} from "@reduxjs/toolkit";
 import createSagaMiddleware from 'redux-saga';
 //import rootReducers, {whitelist} from './root-reducer';
-import rootReducers from './app/root-reducer';
+import rootReducers, {whitelist} from './app/root-reducer';
 //import {rootSaga} from '../root-saga';
 import { rootSaga } from './app/root-saga';
 import {persistStore, persistReducer} from 'redux-persist';
@@ -21,6 +21,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const persistConfig = {
   key: 'root',
   storage: AsyncStorage,
+  whitelist: whitelist,
 }   
 
 let persistedReducer=persistReducer(persistConfig,rootReducers);

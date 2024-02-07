@@ -7,15 +7,20 @@
 import {combineReducers} from 'redux';
 //import {LoginReducer} from './account/login/login.reducer';
 import { LoginReducer } from './login/login.reducer';
-import { quoteReducer,HomeScreen_DashBoardCount_Reducer } from './Home/home.reducer';
+import { HomeScreen_DashBoardCount_Reducer } from './Home/home.reducer';
+import { OrderReducer } from './Order/order.reducer';
 const rootReducers = combineReducers({
   
   login: LoginReducer,
   dashboardCountingKey:HomeScreen_DashBoardCount_Reducer,
+  orderScreenAllOrdersKey:OrderReducer
   //quotes:quoteReducer,
   
 });
 
-
+export const whitelist = [
+  'login',
+  //'orderScreenAllOrdersKey',
+];
 
 export default rootReducers;

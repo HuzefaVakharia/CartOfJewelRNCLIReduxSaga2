@@ -83,4 +83,86 @@ export async function post(handler, payload) {
     }
     return axios(options);
   }
+
+
+
+ /*  
+ //This is working but not sending data to order.saga.js file:
+ 
+ 
+ export async function getOrderScreenData(handler, payload = false) {
+    const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
+    console.log('Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
+    let user = JSON.parse(values);
+
+    fetch(
+      'https://rajeshwersoftsolution.com/jwelcart/api/' + handler,
+      {
+          method: 'POST',
+          headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: 'Bearer ' + user.token,
+          },
+
+          
+
+          body: JSON.stringify({
+            start: 0,
+                    limit: 1000}),
+          }
+
+  ).then((response) =>   
+  {
+      let result = response.json();
+
+      result.then((values) =>
+      {
+          console.log('Console gave Values using normal fetch() function is:'+JSON.stringify(values));
+      }
+      
+      );
+  
+    }
+    );
+  
+    return values;
+
+  } */
+
+
+
+
+
+
+
+  /* 
+  
+  
+  
+  See this ref: https://www.mindbowser.com/how-to-send-a-raw-data-body-to-an-axios-request-in-react-native/ 
+  */
+  
+  
+  
+  export async function getOrderScreenData(handler, payload = false) {
+    
+    const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
+    console.log('Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
+    
+  
+    const limitsetter = JSON.stringify({
+
+      "start": 0,
+      
+      "limit": 1000,
+      
+      });
+    
+    let user = JSON.parse(values);
+  
+    //return axios(options);
+    return axios.post(BASE_URL + handler, limitsetter,{headers: {Accept: 'application/json',
+    'Content-Type': 'application/json',Authorization: 'Bearer ' + user.token},});
+  } 
   
