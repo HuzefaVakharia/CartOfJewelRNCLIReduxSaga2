@@ -30,7 +30,7 @@ import { setDashBoardCountDataInStore } from '../Home/home.action';
 
 export function* login(action) {
   //alert('Action got inside login.saga.js file is:' + JSON.stringify(action));
-  console.log('Action got inside login.saga.js file is:' + JSON.stringify(action));
+  console.log('55555. Action got inside login.saga.js file is:' + JSON.stringify(action));
 
 
 
@@ -72,14 +72,14 @@ export function* login(action) {
   });
   auth = auth_c;
   //console.log('auth_c got inside login.saga.js is:' + JSON.stringify(auth_c));
-  console.log('auth_c got inside login.saga.js is:' + JSON.stringify(auth_c));
+  console.log('777777. auth_c got inside login.saga.js is:' + JSON.stringify(auth_c));
 
 
   /* ****************************************************************************************** */
 
 
   if (auth) {
-    console.log('Auth is true and Token is of auth.data: ', auth.data.data.access_token);
+    console.log('888888. Auth is true and Token is of auth.data: ', auth.data.data.access_token);
 
     /* 
     Above console.log will give this :
@@ -108,7 +108,7 @@ export function* login(action) {
       try {
         const dashBoardCountAPIResult = await getdashBoardCount('dashboard_count');
           //const user = await authorizedGet('account/detail');
-          console.log('dashBoardCountAPIResult got inside login.saga.js file after getdashBoardCount() function call is:',dashBoardCountAPIResult);
+          console.log('10,10,10,10,10: dashBoardCountAPIResult got inside login.saga.js file after getdashBoardCount() function call is:',dashBoardCountAPIResult);
           return ({ dashBoardCountAPIResult });
         } catch (u_error) {
           return ({ u_error });
@@ -141,7 +141,7 @@ export function* login(action) {
           //token: auth.data.token,
         };
         //AsyncStorage.setItem('user', JSON.stringify(response.data));
-        console.log('New order count is got inside login.saga.js is:',dashBoardCountAPIResult.data.data.new_order);
+        console.log('11,11,11,11,11->->->. New order count is got inside login.saga.js is:',dashBoardCountAPIResult.data.data.new_order);
         AsyncStorage.setItem(
           'dashBoardDataKey',
           JSON.stringify(response)
@@ -178,11 +178,11 @@ export function* login(action) {
           
         });  
   
-        console.log('Login success message from if(dashBoardCountAPIResult) condition ');
+        console.log('14,14,14,14. Login success message from if(dashBoardCountAPIResult) condition ');
       } else {//This else is for if(dashBoardCountAPIResult)
         console.log('Error response message from if(dashBoardCountAPIResult) condition');
   
-        ToastAndroid.show('Login failed message from if(dashBoardCountAPIResult) condition.', ToastAndroid.SHORT);
+        ToastAndroid.show('11,11,11,11,11. Login failed message from if(dashBoardCountAPIResult) condition.', ToastAndroid.SHORT);
         //AsyncStorage.removeItem('token');
         yield put({type: AuthActions.LOGIN_FAILED});
       }
@@ -205,7 +205,7 @@ export function* login(action) {
 
 
   } else {//This else is for the if(auth)
-    console.log('Error response from login.saga.js file');
+    console.log('888888. Error response from login.saga.js file');
     ToastAndroid.show('Login failed message from login.saga.js file.', ToastAndroid.SHORT);
     yield put({ type: AuthActions.LOGIN_FAILED });
   }

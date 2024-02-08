@@ -15,7 +15,7 @@ export const BASE_URL = 'https://rajeshwersoftsolution.com/jwelcart/api/';
 
 
 export async function post(handler, payload) {
-  console.log('Login function executing in axiosfile..And payload got is:',JSON.stringify(payload));  
+  console.log('6. Login function executing in axiosfile..And payload got is:',JSON.stringify(payload));  
   return axios.post(BASE_URL + handler, payload);
   /* 
   
@@ -62,7 +62,7 @@ export async function post(handler, payload) {
 
   export async function getdashBoardCount(handler, payload = false) {
     const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
-    console.log('Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
+    console.log('9. Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
     let user = JSON.parse(values);
     let options = {
       method: 'POST',
@@ -148,7 +148,7 @@ export async function post(handler, payload) {
   export async function getOrderScreenData(handler, payload = false) {
     
     const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
-    console.log('Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
+    console.log('6. (For OrderScreen) Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
     
   
     const limitsetter = JSON.stringify({

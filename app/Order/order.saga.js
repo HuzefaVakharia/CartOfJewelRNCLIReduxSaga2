@@ -30,7 +30,7 @@ import {setOrderScreenDataInStore,setQuotes} from '../Order/order.action';
 
 export function* orderscreendatafetching(action) {
   //alert('Action got inside login.saga.js file is:' + JSON.stringify(action));
-  console.log('Action got inside order.saga.js file is:' + JSON.stringify(action));
+  console.log('444444. (For OrderScreen) Action got inside order.saga.js file is:' + JSON.stringify(action));
 
 
 
@@ -105,13 +105,13 @@ export function* orderscreendatafetching(action) {
 
 
     const {orderScreenAPIResult, u_error} = yield call(async function () {
-        console.log('call function inside order.saga.js running....');
+        console.log('55555. (For OrderScreen) call function inside order.saga.js running....');
       try {
         //const orderScreenAPIResult = await getdashBoardCount('dashboard_count');
         const orderScreenAPIResult = await getOrderScreenData('order_list');
           //const user = await authorizedGet('account/detail');
           //console.log('orderScreenAPIResult got inside login.saga.js file after getdashBoardCount() function call is:',orderScreenAPIResult);
-          console.log('orderScreenAPIResult got inside login.saga.js file after getdashBoardCount() function call is:',JSON.stringify(orderScreenAPIResult));
+          console.log('777777. (For OrderScreen) orderScreenAPIResult got inside login.saga.js file after getdashBoardCount() function call is:',JSON.stringify(orderScreenAPIResult));
           return ({ orderScreenAPIResult });
         } catch (u_error) {
           return ({ u_error });

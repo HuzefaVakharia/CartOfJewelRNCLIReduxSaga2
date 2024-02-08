@@ -14,7 +14,9 @@ import { HomeScreen } from "../actionNames";
 //import {AuthActions} from '../actionNames';
 
 export function HomeScreen_DashBoardCount_Reducer(state = {data: {}, isLoading: true}, action) {
+  console.log('undefined number:::::HomeScreen_DashBoardCount_Reducer running with action.type:',action.type);
   switch (action.type) {
+    
     case HomeScreen.SET_DASHBOARDCOUNTVALUE:
       return action.payload;
     /* case AuthActions.LOGOUT:

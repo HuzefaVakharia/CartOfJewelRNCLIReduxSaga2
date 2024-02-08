@@ -36,7 +36,7 @@ SPECIAL NOTE: FETCHING DATA IN FLATLIST FOR ANY SCREEN IN WHICH WE HAVE TO JUST 
 
 //export const setDashBoardCountDataInStore = () => {
      export const setOrderScreenDataInStore = () => {
-        console.log('setOrderScreenDataInStore() running inside order.action.js file....');
+        console.log('222222. (For OrderScreen) setOrderScreenDataInStore() running inside order.action.js file....');
   return {
     type: ActionNamesAssociatedWithOrderScreen.SET_ORDERSCREENDATA,
     //payload: payload,
@@ -50,7 +50,7 @@ SPECIAL NOTE: FETCHING DATA IN FLATLIST FOR ANY SCREEN IN WHICH WE HAVE TO JUST 
 
 // Action creator function for setting quotes data in the Redux store
 export function setQuotes(data) {
-  console.log('setQuotes(data) running inside order.action.js file with data:',JSON.stringify(data));
+  console.log('888888. (For OrderScreen) setQuotes(data) running inside order.action.js file with data:',JSON.stringify(data));
   return {
     type: ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA,
     data,

@@ -16,6 +16,7 @@ import { HomeScreen } from "../actionNames";
 
 
 export const setDashBoardCountDataInStore = (payload) => {
+  console.log('12,12,12,12,12. Payload got inside home.action.js file inside setDashBoardCountDataInStore function is:',JSON.stringify(payload));
   return {
     type: HomeScreen.SET_DASHBOARDCOUNTVALUE,
     payload: payload,

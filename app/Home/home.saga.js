@@ -20,8 +20,8 @@ import { fetchQuotes,setQuotes } from './home.action';
 
 export function* getQuotesData(action) {
 
-    alert('Action got inside login.saga.js file is:' + JSON.stringify(action));
-  console.log('Action got inside login.saga.js file is:' + JSON.stringify(action));
+    alert('Action got inside home.saga.js file is:' + JSON.stringify(action));
+  console.log('Action got inside home.saga.js file is:' + JSON.stringify(action));
 
 
 

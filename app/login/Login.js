@@ -82,11 +82,11 @@ const LoginScreen = ({ navigation }) =>
 
   useEffect(()=>{
     
-    console.log('Login per details got from Store in Login.js file is:',JSON.stringify(login_person_detail));
+    console.log('1st But will also comes at number ? ->Login per details got from Store in Login.js file is:',JSON.stringify(login_person_detail));
   },)
 
    useEffect(()=>{
-    console.log('UseEffect for retrieveData is running...');
+    console.log('Actually this is number 222222.   UseEffect for retrieveData is running...');
     _retrieveData();
   },[]);
 
@@ -223,6 +223,7 @@ const LoginScreen = ({ navigation }) =>
               //password: '123456',
               navigation: navigation,
             };
+            console.log('AsyncStorage got mobile number and password from AsyncStorage and now it is going to execute function of dispatch(login(payload)) using mobile number from AsyncStorage which are:',user.mobile_no);
             dispatch(login(payload));
 
 
@@ -252,12 +253,12 @@ const LoginScreen = ({ navigation }) =>
 
 
 
-  console.log(
+  /* console.log(
     'Mobile Number which received is: ' +
     mobile_no +
     ' And password which received is: ' +
     passwordForLogin
-  );
+  ); */
 
 
   useEffect(() =>
@@ -480,7 +481,7 @@ const LoginScreen = ({ navigation }) =>
 
 
   const loginButton = (mobile_no, passwordForLogin) => {
-    console.log('Running loginButton function inside Login.js');
+    console.log('222222.Running loginButton function inside Login.js');
     let payload = {
             mobile_no: mobile_no,
             password: passwordForLogin,

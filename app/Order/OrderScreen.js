@@ -644,16 +644,16 @@ const OrderScreen = ({ navigation }) => {
 
   useEffect(() =>
   {
-    setIsLoadingOrderScreenData(true);
+    //setIsLoadingOrderScreenData(true);
     
     setcallFetchDynamicAPIsInOrderScreen(true);
     //getOrderScreenData();
   }, []);
 
   useEffect(() => {
-    console.log('UseEffect for setOrderScreenDataInStore() running....');
+    console.log('11111. (For OrderScreen) UseEffect for setOrderScreenDataInStore() running....');
     
-    //dispatch(setOrderScreenDataInStore());
+    dispatch(setOrderScreenDataInStore());
     
   }, []);
 
@@ -661,7 +661,8 @@ const OrderScreen = ({ navigation }) => {
     console.log('OrderScreen Data Got when quotesData is null From Store in OrderScreen.js file is:',JSON.stringify(quotesData));
     //console.log('Quotes got from Store in HomeScreen.js file is:',JSON.stringify(quotesData));
     //console.log('OrderScreen Data Got From Store in OrderScreen.js file is:',JSON.stringify(orderScreenAllOrders));
-     if(quotesData!=null){setIsLoadingOrderScreenData(false)
+     if(quotesData!=null){
+      setIsLoadingOrderScreenData(false)
     console.log('OrderScreen Data Got when quotesData is NOT null From Store in OrderScreen.js file is:',JSON.stringify(quotesData));
     } 
   },[]);
@@ -1193,7 +1194,7 @@ const OrderScreen = ({ navigation }) => {
                                   <Text
                                   style={{fontSize: 18,
                                           color: '#454343',}}
-                                  >{item.category_name}</Text>
+                                  >{item.customer_name}</Text>
                                   {/*View to hold top view which is holding large image and category,items, customer details etc starts here*/ }
                                   <View
                                     style={ {

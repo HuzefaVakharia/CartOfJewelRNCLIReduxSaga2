@@ -13,11 +13,11 @@ const initialState = {userDetailsForOrderScreen: [], isLoading: false};
     export function OrderReducer(state = initialState, action) {
   switch (action.type) {
     case ActionNamesAssociatedWithOrderScreen.SET_ORDERSCREENDATA:
-      console.log('login.reducer.js file is working with switch case of AuthActions.LOGIN');
+      console.log('3333. (For OrderScreen) order.reducer.js file is working with switch case of ActionNamesAssociatedWithOrderScreen.SET_ORDERSCREENDATA');
       return {...state, isLoading: true};
     // Case for setting quotes data
     case ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA:
-      console.log('ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA case running inside order.reducer.js and got quotes which are:',JSON.stringify(action.data));
+      console.log('9. (For OrderScreen) ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA case running inside order.reducer.js and got quotes which are:',JSON.stringify(action.data));
       return {
         ...state,
         quotes: action.data,

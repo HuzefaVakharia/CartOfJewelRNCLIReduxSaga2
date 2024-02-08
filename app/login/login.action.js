@@ -10,7 +10,7 @@
 
 import { AuthActions } from "../actionNames";
 export function login(payload) {
-  console.log('Payload got inside Login.action.js file is:'+JSON.stringify(payload));
+  console.log('3333. Payload got inside Login.action.js file is:'+JSON.stringify(payload));
   return {
     type: AuthActions.LOGIN,
     payload,
