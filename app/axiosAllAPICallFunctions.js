@@ -10,55 +10,42 @@
 import axios from 'axios';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-//export const BASE_URL = 'https://api.soceton.com/';
+
 export const BASE_URL = 'https://rajeshwersoftsolution.com/jwelcart/api/';
 
 
+
+
+
+
+/* VIMP NOTE OF WHEN TO USE THIS KIND OF API CALL :This is for Login when we have to pass userid and password to server (i.e. when we have to pass some data inside body to fetch our API, here payload is data which we will pass as body to fetch our API) and get response from server 
+
+ 
+This above post() method which is user defined will post our payload to our online server
+  
+
+*/
 export async function post(handler, payload) {
   console.log('6. Login function executing in axiosfile..And payload got is:',JSON.stringify(payload));  
   return axios.post(BASE_URL + handler, payload);
-  /* 
   
-  This code is also correct which can show the fetch result in console but was not returning value to login.saga.js file, so to return the value above code is sufficient and working.
-  
-  axios.post(BASE_URL + handler, payload)
-  .then((getResponse) => {
-    console.log("GET Response")
-    console.log('Console got this after then:',getResponse.data);
-    let data = getResponse.data;
-    return data;    
-  })
-  .catch(function (error) {
-    console.log("Error while fetching From RajeshwareSoftSolution: ",error.response.data);
-    //console.log("Error while fetching From RajeshwareSoftSolution: ",JSON.stringify(error));
-  });   */
-
-
-
-
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }
-  /* 
-  This above post() method which is user defined will post our payload to our online server
-  */
+  
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  /* VIMP NOTE OF WHEN TO USE THIS KIND OF API CALL :This method of API calling is useful when we have to just pass only token inside header and not anything inside body to fetch our API */
 
   export async function getdashBoardCount(handler, payload = false) {
     const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
@@ -144,7 +131,9 @@ export async function post(handler, payload) {
   */
   
   
+  /* VIMP NOTE OF WHEN TO USE THIS KIND OF API CALL :This method of API calling is useful when we have to pass both header and body part to fetch our API, Here the structure of our axios.post() function to pass Url, body and header will be like this:
   
+  axios.post(URL,body_part,header_part) */
   export async function getOrderScreenData(handler, payload = false) {
     
     const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
