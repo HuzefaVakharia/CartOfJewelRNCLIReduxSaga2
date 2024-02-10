@@ -47,7 +47,7 @@ export async function post(handler, payload) {
 
   /* VIMP NOTE OF WHEN TO USE THIS KIND OF API CALL :This method of API calling is useful when we have to just pass only token inside header and not anything inside body to fetch our API */
 
-  export async function getdashBoardCount(handler, payload = false) {
+  export async function fetchdashBoardCountPassHeaderOnly(handler, payload = false) {
     const values = await AsyncStorage.getItem('login_details_for_nextTimeKey');
     console.log('9. Values got inside axiosAllAPICallFunction.js file after AsyncStorage.getItem() is:',JSON.stringify(values));
     let user = JSON.parse(values);
@@ -62,11 +62,11 @@ export async function post(handler, payload) {
     };
     if (payload) {
       options.data = payload;
-      //alert('payload from getdashBoardCount() function is True:' + payload);
+      //alert('payload from fetchdashBoardCountPassHeaderOnly() function is True:' + payload);
     }
     else{
-      //alert('payload from getdashBoardCount() function is False and handler is:' + handler+'And Payload is:'+payload);
-      /* alert('payload from getdashBoardCount() function is False and payload is:' + payload+'options.data is:'+options.data+' ,And full options is:'+JSON.stringify(options)); */
+      //alert('payload from fetchdashBoardCountPassHeaderOnly() function is False and handler is:' + handler+'And Payload is:'+payload);
+      /* alert('payload from fetchdashBoardCountPassHeaderOnly() function is False and payload is:' + payload+'options.data is:'+options.data+' ,And full options is:'+JSON.stringify(options)); */
     }
     return axios(options);
   }

@@ -35,10 +35,10 @@ SPECIAL NOTE: FETCHING DATA IN FLATLIST FOR ANY SCREEN IN WHICH WE HAVE TO JUST 
 
 
 //export const setDashBoardCountDataInStore = () => {
-     export const setOrderScreenDataInStore = () => {
-        console.log('222222. (For OrderScreen) setOrderScreenDataInStore() running inside order.action.js file....');
+     export const fetchOrderPassBodyAndHeader = () => {
+        console.log('222222. (For OrderScreen) fetchOrderPassBodyAndHeader() running inside order.action.js file....');
   return {
-    type: ActionNamesAssociatedWithOrderScreen.SET_ORDERSCREENDATA,
+    type: ActionNamesAssociatedWithOrderScreen.ONLY_GET_ORDERS_DONOTSHOW,
     //payload: payload,
   }; 
 

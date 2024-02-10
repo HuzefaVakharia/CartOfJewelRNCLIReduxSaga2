@@ -19,7 +19,7 @@ import { fetchQuotes,setQuotes } from './home.action';
 
 
 export function* getQuotesData(action) {
-
+/* NOTE THAT WE ARE NOT CALLING THIS getQuotesData() for showing our dashboard count in our homescreen in this project, this was use for quote api calling demo */
     alert('Action got inside home.saga.js file is:' + JSON.stringify(action));
   console.log('Action got inside home.saga.js file is:' + JSON.stringify(action));
 

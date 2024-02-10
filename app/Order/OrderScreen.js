@@ -49,7 +49,7 @@ import Animated, {
   useAnimatedStyle,
   useSharedValue,
 } from 'react-native-reanimated';
-import {setOrderScreenDataInStore} from './order.action';
+import {fetchOrderPassBodyAndHeader} from './order.action';
 
 import AllUITogether from '../components/AllUITogether';
 let { height, width } = Dimensions.get('window');
@@ -651,9 +651,9 @@ const OrderScreen = ({ navigation }) => {
   }, []);
 
   useEffect(() => {
-    console.log('11111. (For OrderScreen) UseEffect for setOrderScreenDataInStore() running....');
+    console.log('11111. (For OrderScreen) UseEffect for fetchOrderPassBodyAndHeader() running....');
     
-    dispatch(setOrderScreenDataInStore());
+    dispatch(fetchOrderPassBodyAndHeader());
     
   }, []);
 

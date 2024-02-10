@@ -45,7 +45,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Button, Card } from '@rneui/themed';
 
 import {useDispatch, useSelector} from 'react-redux';
-import {login} from './login.action';
+import {fetchLoginPassBodyOnly} from './login.action';
 
 let { height, width } = Dimensions.get('window');
 
@@ -223,11 +223,11 @@ const LoginScreen = ({ navigation }) =>
               //password: '123456',
               navigation: navigation,
             };
-            console.log('AsyncStorage got mobile number and password from AsyncStorage and now it is going to execute function of dispatch(login(payload)) using mobile number from AsyncStorage which are:',user.mobile_no);
-            dispatch(login(payload));
+            console.log('AsyncStorage got mobile number and password from AsyncStorage and now it is going to execute function of dispatch(fetchLoginPassBodyOnly(payload)) using mobile number from AsyncStorage which are:',user.mobile_no);
+            dispatch(fetchLoginPassBodyOnly(payload));
 
 
-
+              //fetchOrderPassBodyAndHeader()
 
 
 
@@ -487,9 +487,9 @@ const LoginScreen = ({ navigation }) =>
             password: passwordForLogin,
             navigation: navigation,
           };
-          dispatch(login(payload));
+          dispatch(fetchLoginPassBodyOnly(payload));
           /* 
-          From Here our Login process starts after user enters his/her email, password and click on Login button, we will create a payload with email, password and navigation and using dispatch() we will trigger action function call of login(payload)
+          From Here our Login process starts after user enters his/her email, password and click on Login button, we will create a payload with email, password and navigation and using dispatch() we will trigger action function call of fetchLoginPassBodyOnly(payload)
           
           */
   };
@@ -843,7 +843,7 @@ const LoginScreen = ({ navigation }) =>
                          () =>{
                           loginButton(mobile_no, passwordForLogin); 
                           //login(mobile_no, passwordForLogin)
-                          //dispatch(login(payload));
+                          //dispatch(fetchLoginPassBodyOnly(payload));
                           console.log('Btn pressed for signin');
                           }
                       }

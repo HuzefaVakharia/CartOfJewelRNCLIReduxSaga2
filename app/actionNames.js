@@ -33,7 +33,7 @@ export class HomeScreen {
 }
 
 export class ActionNamesAssociatedWithOrderScreen{
-  static SET_ORDERSCREENDATA = 'SET_ORDERSCREENDATA';
+  static ONLY_GET_ORDERS_DONOTSHOW = 'ONLY_GET_ORDERS_DONOTSHOW';
   static ORDERSCREENDATAFETCH_SUCCESS = 'ORDERSCREENDATAFETCH_SUCCESS';
   static SET_QUOTES_DATA = 'set_quotes_data';
 }
