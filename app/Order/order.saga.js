@@ -20,7 +20,7 @@ import { AuthActions,ActionNamesAssociatedWithOrderScreen } from '../actionNames
 import {getdashBoardCount, post,getOrderScreenData} from '../axiosAllAPICallFunctions';
 import { ToastAndroid } from 'react-native';
 
-import {fetchOrderPassBodyAndHeader,setQuotes} from '../Order/order.action';
+import {fetchOrderPassBodyAndHeader,setOrder_listResultInStore} from '../Order/order.action';
 
 
 
@@ -56,9 +56,9 @@ export function* orderscreendatafetching(action) {
 
 
 
-    // Dispatching the 'setQuotes' action with the retrieved quotes data
+    // Dispatching the 'setOrder_listResultInStore' action with the retrieved quotes data
  
- yield put(setQuotes(orderScreenAPIResult.data.data.order_list));
+ yield put(setOrder_listResultInStore(orderScreenAPIResult.data.data.order_list));
 
 
 

@@ -49,10 +49,10 @@ SPECIAL NOTE: FETCHING DATA IN FLATLIST FOR ANY SCREEN IN WHICH WE HAVE TO JUST 
 
 
 // Action creator function for setting quotes data in the Redux store
-export function setQuotes(data) {
-  console.log('888888. (For OrderScreen) setQuotes(data) running inside order.action.js file with data:',JSON.stringify(data));
+export function setOrder_listResultInStore(data) {
+  console.log('888888. (For OrderScreen) setOrder_listResultInStore(data) running inside order.action.js file with data:',JSON.stringify(data));
   return {
-    type: ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA,
+    type: ActionNamesAssociatedWithOrderScreen.SET_ORDERLIST_DATA_IN_STORE,
     data,
   };
 }
@@ -71,9 +71,9 @@ export function setQuotes(data) {
 } */
 
 // Action creator function for setting quotes data in the Redux store
-/* export function setQuotes(data) {
-    console.log('setQuotes() function from home.action running and got this data:',JSON.stringify(data));
-   // console.log('setQuotes() function from home.action running and got this data:',data);
+/* export function setOrder_listResultInStore(data) {
+    console.log('setOrder_listResultInStore() function from home.action running and got this data:',JSON.stringify(data));
+   // console.log('setOrder_listResultInStore() function from home.action running and got this data:',data);
   return {
     type: HomeScreen.SET_QUOTES_DATA,
     data,

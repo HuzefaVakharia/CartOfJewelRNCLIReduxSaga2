@@ -35,7 +35,7 @@ export class HomeScreen {
 export class ActionNamesAssociatedWithOrderScreen{
   static ONLY_GET_ORDERS_DONOTSHOW = 'ONLY_GET_ORDERS_DONOTSHOW';
   static ORDERSCREENDATAFETCH_SUCCESS = 'ORDERSCREENDATAFETCH_SUCCESS';
-  static SET_QUOTES_DATA = 'set_quotes_data';
+  static SET_ORDERLIST_DATA_IN_STORE = 'SET_ORDERLIST_DATA_IN_STORE';
 }
 
 export class ReportsActions {

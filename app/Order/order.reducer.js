@@ -16,8 +16,8 @@ const initialState = {userDetailsForOrderScreen: [], isLoading: false};
       console.log('3333. (For OrderScreen) order.reducer.js file is working with switch case of ActionNamesAssociatedWithOrderScreen.ONLY_GET_ORDERS_DONOTSHOW');
       return {...state, isLoading: true};
     // Case for setting quotes data
-    case ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA:
-      console.log('9. (For OrderScreen) ActionNamesAssociatedWithOrderScreen.SET_QUOTES_DATA case running inside order.reducer.js and got quotes which are:',JSON.stringify(action.data));
+    case ActionNamesAssociatedWithOrderScreen.SET_ORDERLIST_DATA_IN_STORE:
+      console.log('9. (For OrderScreen) ActionNamesAssociatedWithOrderScreen.SET_ORDERLIST_DATA_IN_STORE case running inside order.reducer.js and got quotes which are:',JSON.stringify(action.data));
       return {
         ...state,
         quotes: action.data,

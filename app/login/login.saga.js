@@ -187,11 +187,16 @@ export function* login(action) {
         };
         
         console.log('11,11,11,11,11->->->. New order count is got inside login.saga.js is:',dashBoardCountAPIResult.data.data.new_order);
+        
+        
+        
         AsyncStorage.setItem(
           'dashBoardDataKey',
           JSON.stringify(response)
       );
 
+
+      /* Here in this project we are storing the dashBoardData inside AsyncStorage() as shown above, but we are not displaying the values of our dashboard count inside our HomeScreen from AsyncStorage() storage, we are displaying the dashboard count values directly by fetching values from our store of redux. */
 
 
       /* Here we are storing our response two times in our Redux store with two different arrays which are present in two different reducers namely
@@ -203,7 +208,7 @@ export function* login(action) {
         yield put(
           setDashBoardCountDataInStore({
             data: response,
-            //social_auth: response.social_auth,
+            
             isLoading: false,
           }),
         );
