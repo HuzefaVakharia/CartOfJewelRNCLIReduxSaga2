@@ -42,8 +42,9 @@ import { TextInput } from 'react-native-paper';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { Button, Card } from '@rneui/themed';
-
+//import { Button, Card } from '@rneui/themed';
+import { Card } from '@rneui/themed';
+import {Button} from 'react-native-paper';
 import {useDispatch, useSelector} from 'react-redux';
 import {fetchLoginPassBodyOnly} from './login.action';
 
@@ -70,7 +71,7 @@ const LoginScreen = ({ navigation }) =>
 {
 
   const login_person_detail = useSelector(state => state.login);
-  //const isLoadingValueFromStore = useSelector(state => state.login.isLoading);
+  const isLoadingValueFromStore = useSelector(state => state.login.isLoading);
 
   /* 
   To check that our data is getting stored inside our Redux store successfully, we can always check it just by calling useSelector() function inside any main screen like this LoginScreen.js which can be seen on our device by any navigation, and we can use the name of our reducer like here we used name of login with dot operator of keyword state like this state.login and pass that useSelector() returned value to any const like here we are doing in const login_person_detail and print that const variable value using console.log() like we did as shown below:
@@ -838,6 +839,11 @@ const LoginScreen = ({ navigation }) =>
                 ) : (
                   <>
 
+                    {/* 
+                    This button was original button in my JewelCart app which was not having loader inside the button as inbuilt, so i used Button from react-native-paper and then using our isLoadingValueFromStore value i gave loading or not loading values which is show below. And now i am using that below given button of react-native-paper with inbuilt loader inside the button, in which we just have to pass true or false, which is set using value from our store of isLoadingValueFromStore.
+                    
+                    
+                    
                     <Button
                       title="SIGN IN"
                       onPress={
@@ -863,7 +869,27 @@ const LoginScreen = ({ navigation }) =>
 
 
 
-                    />
+                    /> */}
+
+                    <Button
+              mode={'contained'}
+              buttonColor='Blue'
+              style={{width: '100%', minWidth: 140}}
+              contentStyle={{ backgroundColor: '#283E65',//#013F66
+                        
+                        borderWidth: 0,
+                        borderRadius: 30,
+                        height: responsiveHeight(7),
+                        width: responsiveWidth(75),
+                        marginTop: responsiveHeight(4),
+                        //CCCCCCCCCCCCCCCCCCCCC
+                        marginBottom: responsiveHeight(0),}}
+              loading={isLoadingValueFromStore}
+              onPress={() => {
+                loginButton(mobile_no, passwordForLogin);
+              }}>
+              Sign In
+            </Button>
 
                   </>
                 ) }
