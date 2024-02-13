@@ -70,6 +70,7 @@ const LoginScreen = ({ navigation }) =>
 {
 
   const login_person_detail = useSelector(state => state.login);
+  //const isLoadingValueFromStore = useSelector(state => state.login.isLoading);
 
   /* 
   To check that our data is getting stored inside our Redux store successfully, we can always check it just by calling useSelector() function inside any main screen like this LoginScreen.js which can be seen on our device by any navigation, and we can use the name of our reducer like here we used name of login with dot operator of keyword state like this state.login and pass that useSelector() returned value to any const like here we are doing in const login_person_detail and print that const variable value using console.log() like we did as shown below:

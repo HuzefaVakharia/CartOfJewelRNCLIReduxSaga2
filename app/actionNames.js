@@ -26,6 +26,13 @@ export class AuthActions {
   
 }
 
+export class ActionNamesAssociatedWithRegisterUser {
+  static REGISTER_USER = 'REGISTER_USER';
+  static REGISTER_USER_SUCCESS = 'REGISTER_USER_SUCCESS';
+  static REGISTER_USER_FAILED = 'REGISTER_USER_FAILED';
+  
+}
+
 export class HomeScreen {
   static SET_DASHBOARDCOUNTVALUE = 'SET_DASHBOARDCOUNTVALUE';
   

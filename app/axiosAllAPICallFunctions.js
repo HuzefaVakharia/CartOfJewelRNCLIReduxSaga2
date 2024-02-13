@@ -30,6 +30,14 @@ export async function post(handler, payload) {
   return axios.post(BASE_URL + handler, payload);
   
   }
+
+
+
+  export async function postNewUserDataForRegisteration(handler, payload) {
+    console.log('6. postNewUserDataForRegisteration function executing in axiosfile..And payload got is:',JSON.stringify(payload));  
+    return axios.post(BASE_URL + handler, payload);
+    
+    }
   
 
 

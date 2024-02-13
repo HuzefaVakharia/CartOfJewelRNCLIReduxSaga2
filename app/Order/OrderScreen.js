@@ -651,6 +651,7 @@ const OrderScreen = ({ navigation }) => {
   }, []);
 
   useEffect(() => {
+    setIsLoadingOrderScreenData(true);
     console.log('11111. (For OrderScreen) UseEffect for fetchOrderPassBodyAndHeader() running....');
     
     dispatch(fetchOrderPassBodyAndHeader());

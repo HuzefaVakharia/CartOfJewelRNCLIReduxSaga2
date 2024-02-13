@@ -6,12 +6,13 @@
 /* eslint-disable eol-last */
 
 import {all, takeEvery, take} from 'redux-saga/effects';
-import {AuthActions,HomeScreen,ActionNamesAssociatedWithOrderScreen} from './actionNames';
+import {AuthActions,HomeScreen,ActionNamesAssociatedWithOrderScreen,ActionNamesAssociatedWithRegisterUser} from './actionNames';
 //import {forgotPassword} from './account/forgotpassword/forgotpassword.saga';
 //import {signup} from './account/signup/signup.saga';
 //import {login} from './account/login/login.saga';
 import { login } from './login/login.saga';
 import { orderscreendatafetching } from './Order/order.saga';
+import {registerUserSagaGeneratorFunction} from './RegisterUser/register.saga';
 import { getQuotesData } from './Home/home.saga';
 
 
@@ -28,7 +29,7 @@ export function* rootSaga() {
   yield all([
     takeEvery(AuthActions.LOGIN, login),
     takeEvery(ActionNamesAssociatedWithOrderScreen.ONLY_GET_ORDERS_DONOTSHOW, orderscreendatafetching),
-    
+    takeEvery(ActionNamesAssociatedWithRegisterUser.REGISTER_USER, registerUserSagaGeneratorFunction),
     /* Always remember this VIMP CONCEPT THAT WHEN WE WILL CALL ANY WORKER FUNCTION FROM SAGA.JS FILE LIKE HERE ABOVE WE ARE CALLING WORKER FUNCTION WHOSE NAME IS login, then ALONG WITH CALLING THIS WORKER FUNCTION login WE WILL PASS THE ACTION.TYPE NAME AND DATA WHICH IS GOT FROM ACTION.JS FILE, BUT IT IS NOT WRITTEN AS FUNCTION ARGUMENT WHILE CALLING OUR WORKER FUNCTION LIKE THIS:
     
     takeEvery(AuthActions.LOGIN, login(action)),

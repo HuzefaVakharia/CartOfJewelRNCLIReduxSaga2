@@ -9,11 +9,13 @@ import {combineReducers} from 'redux';
 import { LoginReducer } from './login/login.reducer';
 import { HomeScreen_DashBoardCount_Reducer } from './Home/home.reducer';
 import { OrderReducer } from './Order/order.reducer';
+import { RegisterUserReducer } from './RegisterUser/register.reducer';
 const rootReducers = combineReducers({
   
   login: LoginReducer,
   dashboardCountingKey:HomeScreen_DashBoardCount_Reducer,
-  orderScreenAllOrdersKey:OrderReducer
+  orderScreenAllOrdersKey:OrderReducer,
+  registerUserKey:RegisterUserReducer,
   //quotes:quoteReducer,
   
 });
