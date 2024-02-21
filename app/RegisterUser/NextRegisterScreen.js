@@ -383,6 +383,7 @@ const NextRegisterScreen = ({ route, navigation }) =>
       state:state,
       city:city,
       pincode:pincode,
+      navigation:navigation
     };
 
     dispatch(registerNewUserPassBodyOnly(dataForNewUserRegisteration));
@@ -699,7 +700,7 @@ const NextRegisterScreen = ({ route, navigation }) =>
                       ) : (
                         <>
                           <Button
-                            title="SIGN IN"
+                            title="SIGN UP"
                             onPress={
                               () => chkAllFieldsEnteredInNextRegisterScreen()
                               //()=>navigation.navigate('LoginScreen')

@@ -875,14 +875,14 @@ const LoginScreen = ({ navigation }) =>
               mode={'contained'}
               buttonColor='Blue'
               style={{width: '100%', minWidth: 140}}
-              contentStyle={{ backgroundColor: '#283E65',//#013F66
-                        
-                        borderWidth: 0,
-                        borderRadius: 30,
-                        height: responsiveHeight(7),
-                        width: responsiveWidth(75),
-                        marginTop: responsiveHeight(4),
-                        //CCCCCCCCCCCCCCCCCCCCC
+              contentStyle={{ 
+                backgroundColor: '#283E65',//#013F66
+                borderWidth: 0,
+                borderRadius: 30,
+                height: responsiveHeight(7),
+                width: responsiveWidth(75),
+                marginTop: responsiveHeight(4),
+                        //cccccccccccccccccc
                         marginBottom: responsiveHeight(0),}}
               loading={isLoadingValueFromStore}
               onPress={() => {

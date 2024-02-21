@@ -50,7 +50,7 @@ export function* registerUserSagaGeneratorFunction(action) {
 
 
 
-  let auth = null;
+  let newUserRegisterDetails = null;
 
 
 
@@ -88,7 +88,7 @@ export function* registerUserSagaGeneratorFunction(action) {
       return ({ error });
     }
   });
-  //auth = registerNewUser_c;
+  newUserRegisterDetails = registerNewUser_c;
   
   console.log('777777. registerNewUser_c got inside login.saga.js is:' + JSON.stringify(registerNewUser_c));
 
@@ -96,9 +96,38 @@ export function* registerUserSagaGeneratorFunction(action) {
   /* ****************************************************************************************** */
 
 
+  if(registerNewUser_c.data.result==true){
+    console.log('if condition of registerNewUser_c.data.result==true is:' + registerNewUser_c.data.result);
+    yield put({
+      type: ActionNamesAssociatedWithRegisterUser.REGISTER_USER_SUCCESS,
+      payload: newUserRegisterDetails,
+    });
   
+    ToastAndroid.show(registerNewUser_c.data.message, ToastAndroid.LONG);
+    action.payload.navigation.reset({
+      index: 1,
+      
+      routes: [{name: 'LoginScreen'}],
+      
+      
+    });
+  
+  }else{
+    console.log('if condition of registerNewUser_c.data.result==true is false and value got is also:' + registerNewUser_c.data.result);
+    ToastAndroid.show('Register New User failed due to:'+ registerNewUser_c.data.message, ToastAndroid.LONG);
+        //AsyncStorage.removeItem('token');
+        yield put({type: ActionNamesAssociatedWithRegisterUser.REGISTER_USER_FAILED});
 
+          action.payload.navigation.reset({
+          index: 1,
+          
+          routes: [{name: 'Register'}],
+          
+          
+        });  
+  }
 
+ 
 
 
 }
