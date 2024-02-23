@@ -91,7 +91,8 @@ export function* login(action) {
     let login_details_for_nextTime={
       mobile_no: action.payload.mobile_no,
     password: action.payload.password,
-      token:auth.data.data.access_token
+      token:auth.data.data.access_token,
+      loggedInPersonName:auth.data.data.name
     }
 
     AsyncStorage.setItem('login_details_for_nextTimeKey',JSON.stringify(login_details_for_nextTime));

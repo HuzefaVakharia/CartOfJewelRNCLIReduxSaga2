@@ -714,7 +714,7 @@ const NextRegisterScreen = ({ route, navigation }) =>
                               height: responsiveHeight(7),
                               width: responsiveWidth(75),
                               marginTop: responsiveHeight(1),
-                              marginBottom: responsiveHeight(0),
+                              marginBottom: responsiveHeight(0),            
                             } }
 
                           />

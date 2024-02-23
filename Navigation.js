@@ -20,7 +20,9 @@ import HomeScreen from './app/Home/HomeScreen';
 import OrderScreen from './app/Order/OrderScreen';
 import Register from './app/RegisterUser/Register';
 import NextRegisterScreen from './app/RegisterUser/NextRegisterScreen';
-
+import AddOrderScreen from './app/AddNewOrder/AddOrderScreen';
+import AddOrderScreenSecond from './app/AddNewOrder/AddOrderScreenSecond';
+import AddPlatinumOrderScreenSecond from './app/AddNewOrder/AddPlatinumOrderScreenSecond';
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +42,10 @@ const Navigation = () => {
       <Stack.Screen name="OrderScreen" component={OrderScreen} />
       <Stack.Screen name="Register" component={Register} />
       <Stack.Screen name="NextRegisterScreen" component={NextRegisterScreen} />
+      <Stack.Screen name="AddOrderScreen" component={AddOrderScreen} />
+      <Stack.Screen name="AddOrderScreenSecond" component={AddOrderScreenSecond} />
+      <Stack.Screen name="AddPlatinumOrderScreenSecond" component={AddPlatinumOrderScreenSecond} />
+
       
        
       

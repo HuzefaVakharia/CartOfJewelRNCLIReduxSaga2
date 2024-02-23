@@ -71,12 +71,13 @@ const HomeScreen = ({navigation}) => {
   //const { accessTokenKey } = route.params;
   //const quotesData = useSelector(state => state.quotes.quotes);
   const dashboardCountDataGotFromStore = useSelector(state => state.dashboardCountingKey);
+  const userNameOfLoggedInPerson = useSelector(state => state.login);
   
   const dispatch = useDispatch();
 
 
   useEffect(() => {
-    //getLoggedInPersonData();
+    getLoggedInPersonData();
     getDashBoardData();
   }, []);
 
@@ -97,6 +98,7 @@ useEffect(()=>{
   //console.log('Quotes got from Store in HomeScreen.js file is:',JSON.stringify(quotesData));
   console.log('dashboard Count Data Got From Store in HomeScreen.js file is:',JSON.stringify(dashboardCountDataGotFromStore));
   console.log('dashboard Count Data Got From Store in HomeScreen.js file is:',JSON.stringify(dashboardCountDataGotFromStore.data.New_orderCount));
+  console.log('userNameOfLoggedInPerson in HomeScreen.js is:',JSON.stringify(userNameOfLoggedInPerson));
 },)
 
 
@@ -173,9 +175,10 @@ const getData = () => {
   };
 
   const addOrderIconClickedDoThis = () => {
-    navigation.navigate('AddOrderScreen', {
+    navigation.navigate('AddOrderScreen');
+    /* navigation.navigate('AddOrderScreen', {
       accessTokenSentToAddOrderScreen: accessTokenKey,
-    });
+    }); */
   };
 
   const customerIconClickedDoThis = () => {
@@ -318,7 +321,7 @@ const getData = () => {
   
   const getLoggedInPersonData = () => {
     try {
-      AsyncStorage.getItem('LoggedInPersonDataKey').then((value) => {
+      AsyncStorage.getItem('login_details_for_nextTimeKey').then((value) => {
         if (value != null) {
           //navigation.navigate('HomeScreen');
           //setLoginModalVisible(false);
@@ -328,9 +331,9 @@ const getData = () => {
           //setMobile_no(user.MobileNumberForLogin);
           //setPasswordForLogin(user.PasswordForLoginKey);
 
-          setLogedInPersonName(user.Name);
+          setLogedInPersonName(user.loggedInPersonName);
           setLogedInPersonContact_No(
-            user.Contact_No_To_toShowInDrawerNavigation
+            user.mobile_no
           );
 
           //To just see the first modal where our loader is running

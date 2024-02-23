@@ -33,8 +33,8 @@ const Register = ({ route, navigation }) =>
   let contactNoSame = 0, emailIDSame = 0;
   let [typingInRegister, settypingInRegister] = useState(false);
   const [isKeyboardVisibleInRegister, setKeyboardVisibleInRegister] = useState(false);
-  contactNoSame = route.params.sameContactNoPropslabel;
-  emailIDSame = route.params.sameEmailPropslabel;
+  //contactNoSame = route.params.sameContactNoPropslabel;
+  //emailIDSame = route.params.sameEmailPropslabel;
 
 
   const contactNoTextInputRef = React.useRef();
