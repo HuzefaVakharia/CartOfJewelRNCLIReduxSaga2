@@ -65,8 +65,8 @@ const OrderScreen = ({ navigation }) => {
   
   const dispatch = useDispatch();
   //const orderScreenAllOrders = useSelector(state => state.orderScreenAllOrdersKey);
-  let quotesData=null; 
-  quotesData = useSelector(state => state.orderScreenAllOrdersKey.quotes);
+  //let quotesData=null; 
+  let quotesData = useSelector(state => state.orderScreenAllOrdersKey.quotes);
   
   
   
@@ -633,7 +633,8 @@ const OrderScreen = ({ navigation }) => {
   let imageFromOrderScreen = '';
 
   let [resultsecond, setResultsecond] = useState([]);
-  let [isLoadingOrderScreenData, setIsLoadingOrderScreenData] = useState(false);
+  //let [isLoadingOrderScreenData, setIsLoadingOrderScreenData] = useState(false);
+  let [isLoadingOrderScreenData, setIsLoadingOrderScreenData] = useState(true);
   let [resultForNo_Of_Order, setResultForNo_Of_Order] = useState(0);
   //milisecondsToRunLoader=resultForNo_Of_Order;       
   let [loaderForFlatListItemsMoreThanTen, setLoaderForFlatListItemsMoreThanTen] = useState(true);
@@ -651,21 +652,26 @@ const OrderScreen = ({ navigation }) => {
   }, []);
 
   useEffect(() => {
-    setIsLoadingOrderScreenData(true);
+    //setIsLoadingOrderScreenData(true);
     console.log('11111. (For OrderScreen) UseEffect for fetchOrderPassBodyAndHeader() running....');
     
     dispatch(fetchOrderPassBodyAndHeader());
-    
+    setIsLoadingOrderScreenData(false);
   }, []);
 
   useEffect(()=>{
-    console.log('OrderScreen Data Got when quotesData is null From Store in OrderScreen.js file is:',JSON.stringify(quotesData));
+
+
+    console.log('OrderScreen Data Got when quotesData is NOT null From Store in OrderScreen.js file is:',JSON.stringify(quotesData));
+
+
+    /* console.log('OrderScreen Data Got when quotesData is null From Store in OrderScreen.js file is:',JSON.stringify(quotesData));
     //console.log('Quotes got from Store in HomeScreen.js file is:',JSON.stringify(quotesData));
     //console.log('OrderScreen Data Got From Store in OrderScreen.js file is:',JSON.stringify(orderScreenAllOrders));
      if(quotesData!=null){
       setIsLoadingOrderScreenData(false)
     console.log('OrderScreen Data Got when quotesData is NOT null From Store in OrderScreen.js file is:',JSON.stringify(quotesData));
-    } 
+    }  */
   },[]);
 
 
@@ -1187,7 +1193,7 @@ const OrderScreen = ({ navigation }) => {
                                       ? '#757575'
                                       : '#fff',
                                   } }>
-                                  <Text 
+                                  {/* <Text 
                                   style={{fontSize: 18,
                                           color: '#454343',}}>
                                           {item.order_no}
@@ -1195,7 +1201,7 @@ const OrderScreen = ({ navigation }) => {
                                   <Text
                                   style={{fontSize: 18,
                                           color: '#454343',}}
-                                  >{item.customer_name}</Text>
+                                  >{item.customer_name}</Text> */}
                                   {/*View to hold top view which is holding large image and category,items, customer details etc starts here*/ }
                                   <View
                                     style={ {
